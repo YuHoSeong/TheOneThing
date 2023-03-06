@@ -1,11 +1,12 @@
 import React from 'react';
+import MainHead from './MainHead';
 
 function Main() {
-    return (
-        <div>
-            
-        </div>
-    );
+  return (
+    <>
+      <MainHead />
+    </>
+  );
 }
 
 export default Main;
