@@ -28,24 +28,32 @@ function NavigationBar() {
             }}
             onClick={() => navigator('/')}
           >
-            TheOneThing
+            <img src="theonething_logo.png" width="150px" height="50px" />
           </Typography>
           <Box sx={{ display: 'flex' }}>
             {
               // path.pathname !== '/auth' &&
               !auth &&
-                (user ? (
+                (!user ? (
                   <Button
-                    variant="outlined"
-                    sx={{ border: 0, color: '#000000' }}
+                    variant="contained"
+                    sx={{
+                      border: 0,
+                      color: '#000000',
+                      backgroundColor: 'transparent',
+                    }}
                     onClick={() => navigator('/myPage')}
                   >
                     마이페이지
                   </Button>
                 ) : (
                   <Button
-                    variant="contained"
-                    sx={{ backgroundColor: '#000000' }}
+                    variant="text"
+                    sx={{
+                      color: '#969696',
+                      fontWeight: 'bold',
+                      ':hover': { color: '#000000', bgcolor: '#ffffff' },
+                    }}
                     onClick={() => navigator('/auth')}
                   >
                     로그인
@@ -59,6 +67,11 @@ function NavigationBar() {
                 borderRadius: 1.5,
                 backgroundColor: '#000000',
                 color: '#ffffff',
+                ':hover': {
+                  bgcolor: '#ffffff',
+                  color: '#000000',
+                  borderColor: '#000000',
+                },
                 p: '0 25px',
               }}
               onClick={() => navigator('/myPage')}
